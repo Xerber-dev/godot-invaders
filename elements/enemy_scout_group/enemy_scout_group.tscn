@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpwdve85aeqmc"]
+
+[ext_resource type="Script" uid="uid://btuuktkv8poup" path="res://elements/enemy_scout_group/enemy_scout_group.gd" id="1_0mf0n"]
+[ext_resource type="PackedScene" uid="uid://cuptvvxk7s5ga" path="res://elements/enemy_scout/enemy_scout.tscn" id="2_l1l0i"]
+
+[node name="EnemyScoutGroup" type="Node2D" groups=["enemy_scout_group"]]
+script = ExtResource("1_0mf0n")
+
+[node name="EnemyScout" parent="." instance=ExtResource("2_l1l0i")]
+position = Vector2(27, 46)
+
+[node name="EnemyScout2" parent="." instance=ExtResource("2_l1l0i")]
+position = Vector2(52, 46)
+
+[node name="EnemyScout3" parent="." instance=ExtResource("2_l1l0i")]
+position = Vector2(77, 46)
+
+[node name="EnemyScout4" parent="." instance=ExtResource("2_l1l0i")]
+position = Vector2(102, 46)
+
+[node name="EnemyScout5" parent="." instance=ExtResource("2_l1l0i")]
+position = Vector2(127, 46)
+
+[node name="EnemyScout6" parent="." instance=ExtResource("2_l1l0i")]
+position = Vector2(152, 46)
+
+[node name="EnemyScout7" parent="." instance=ExtResource("2_l1l0i")]
+position = Vector2(177, 46)
+
+[node name="EnemyScout8" parent="." instance=ExtResource("2_l1l0i")]
+position = Vector2(202, 46)
+
+[node name="EnemyScout9" parent="." instance=ExtResource("2_l1l0i")]
+position = Vector2(227, 46)
+
+[node name="EnemyScout10" parent="." instance=ExtResource("2_l1l0i")]
+position = Vector2(40, 70)
+
+[node name="EnemyScout11" parent="." instance=ExtResource("2_l1l0i")]
+position = Vector2(65, 70)
+
+[node name="EnemyScout12" parent="." instance=ExtResource("2_l1l0i")]
+position = Vector2(90, 70)
+
+[node name="EnemyScout13" parent="." instance=ExtResource("2_l1l0i")]
+position = Vector2(115, 70)
+
+[node name="EnemyScout14" parent="." instance=ExtResource("2_l1l0i")]
+position = Vector2(140, 70)
+
+[node name="EnemyScout15" parent="." instance=ExtResource("2_l1l0i")]
+position = Vector2(165, 70)
+
+[node name="EnemyScout16" parent="." instance=ExtResource("2_l1l0i")]
+position = Vector2(190, 70)
+
+[node name="EnemyScout17" parent="." instance=ExtResource("2_l1l0i")]
+position = Vector2(215, 70)
+
+[node name="BlockTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="ShotTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="ShotTimer" to="." method="_on_shot_timer_timeout"]

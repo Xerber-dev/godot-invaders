@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://d10rear3haeeo"]
+
+[ext_resource type="Texture2D" uid="uid://cjt1rsg6hbrsh" path="res://assets/enemy_scout/Kla'ed - Scout - Weapons.png" id="1_rp5ku"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uor7j"]
+atlas = ExtResource("1_rp5ku")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fc2kk"]
+atlas = ExtResource("1_rp5ku")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4eec"]
+atlas = ExtResource("1_rp5ku")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2byv"]
+atlas = ExtResource("1_rp5ku")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2lgu"]
+atlas = ExtResource("1_rp5ku")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsj0a"]
+atlas = ExtResource("1_rp5ku")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f0cos"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uor7j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fc2kk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4eec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2byv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2lgu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsj0a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="AnimScoutBullet" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.734, 0.734)
+sprite_frames = SubResource("SpriteFrames_f0cos")
+autoplay = "default"
+frame_progress = 0.7966991

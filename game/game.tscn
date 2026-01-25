@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://bebyjvkf0ph8i"]
+
+[ext_resource type="Script" uid="uid://51xud3jmdl6v" path="res://game/game.gd" id="1_dakft"]
+[ext_resource type="PackedScene" uid="uid://dbp2cptje1bcv" path="res://ui/hud/hud.tscn" id="1_dxrkv"]
+[ext_resource type="Texture2D" uid="uid://bgwoeascn7rel" path="res://assets/Purple_Nebula_01-512x512.png" id="1_vasa2"]
+[ext_resource type="PackedScene" uid="uid://bdxgpim1ky7ul" path="res://elements/space_ship/space_ship.tscn" id="2_h7iqs"]
+[ext_resource type="PackedScene" uid="uid://o4k7dmoexmi1" path="res://elements/wall/wall.tscn" id="3_h7iqs"]
+[ext_resource type="PackedScene" uid="uid://bpwdve85aeqmc" path="res://elements/enemy_scout_group/enemy_scout_group.tscn" id="4_4fuuu"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_dakft")
+
+[node name="HUD" parent="." instance=ExtResource("1_dxrkv")]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture_filter = 3
+texture_repeat = 2
+position = Vector2(128, 120)
+texture = ExtResource("1_vasa2")
+region_enabled = true
+region_rect = Rect2(0, 0, 256, 240)
+
+[node name="SpaceShip" parent="." instance=ExtResource("2_h7iqs")]
+position = Vector2(138, 220)
+
+[node name="Wall" parent="." instance=ExtResource("3_h7iqs")]
+
+[node name="Wall2" parent="." instance=ExtResource("3_h7iqs")]
+position = Vector2(256, 0)
+
+[node name="EnemyScoutGroup" parent="." instance=ExtResource("4_4fuuu")]
