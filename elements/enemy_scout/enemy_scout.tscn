@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cuptvvxk7s5ga"]
+[gd_scene format=3 uid="uid://cuptvvxk7s5ga"]
 
 [ext_resource type="Script" uid="uid://bcd0h6ln5nnhj" path="res://elements/enemy_scout/enemy_scout.gd" id="1_w80ea"]
 [ext_resource type="Texture2D" uid="uid://d4md241ijs104" path="res://assets/enemy_scout/Kla'ed - Scout - Engine.png" id="1_wo67y"]
@@ -85,27 +85,31 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_0wobs"]
 radius = 9.0
 
-[node name="EnemyScout" type="CharacterBody2D" groups=["enemy_scout"]]
+[node name="EnemyScout" type="CharacterBody2D" unique_id=109124033 groups=["enemy_scout"]]
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_w80ea")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=876717601]
 scale = Vector2(0.734, 0.734)
 sprite_frames = SubResource("SpriteFrames_cy0g2")
 autoplay = "default"
 frame_progress = 0.049032673
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=646267653]
 position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_0wobs")
 
-[node name="RayCastLeft" type="RayCast2D" parent="."]
+[node name="RayCastLeft" type="RayCast2D" parent="." unique_id=1347899490]
 target_position = Vector2(-15, 0)
 
-[node name="RayCastRight" type="RayCast2D" parent="."]
+[node name="RayCastRight" type="RayCast2D" parent="." unique_id=1712760389]
 target_position = Vector2(15, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=534125879]
 scale = Vector2(0.734, 0.734)
 texture = ExtResource("3_w80ea")
+
+[node name="BlockTimer" type="Timer" parent="." unique_id=937923189]
+wait_time = 0.2
+one_shot = true

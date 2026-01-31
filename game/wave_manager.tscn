@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://co2x1x6srbxr1"]
+
+[ext_resource type="Script" uid="uid://4orgx0wubxvr" path="res://game/wave_manager.gd" id="1_kctmb"]
+
+[node name="WaveManager" type="Node2D" unique_id=661633558]
+script = ExtResource("1_kctmb")
+
+[node name="ShotTimer" type="Timer" parent="." unique_id=801501168]
+wait_time = 0.5
+autostart = true
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=779252055]
+wait_time = 0.1
+autostart = true
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=772863049]
+
+[node name="EnemySpawnPoint" type="Node2D" parent="SpawnPoints" unique_id=993089437]
+position = Vector2(27, 46)
+
+[node name="EnemySpawnPoint1" type="Node2D" parent="SpawnPoints" unique_id=1854306754]
+position = Vector2(52, 46)
+
+[node name="EnemySpawnPoint2" type="Node2D" parent="SpawnPoints" unique_id=1077899612]
+position = Vector2(77, 46)
+
+[node name="EnemySpawnPoint3" type="Node2D" parent="SpawnPoints" unique_id=1912218533]
+position = Vector2(102, 46)
+
+[node name="EnemySpawnPoint4" type="Node2D" parent="SpawnPoints" unique_id=1523933948]
+position = Vector2(127, 46)
+
+[node name="EnemySpawnPoint5" type="Node2D" parent="SpawnPoints" unique_id=1598484103]
+position = Vector2(152, 46)
+
+[node name="EnemySpawnPoint6" type="Node2D" parent="SpawnPoints" unique_id=1220666162]
+position = Vector2(177, 46)
+
+[node name="EnemySpawnPoint7" type="Node2D" parent="SpawnPoints" unique_id=1141312780]
+position = Vector2(202, 46)
+
+[node name="EnemySpawnPoint8" type="Node2D" parent="SpawnPoints" unique_id=28567878]
+position = Vector2(227, 46)
+
+[node name="EnemySpawnPoint9" type="Node2D" parent="SpawnPoints" unique_id=212542836]
+position = Vector2(40, 70)
+
+[node name="EnemySpawnPoint10" type="Node2D" parent="SpawnPoints" unique_id=1642882470]
+position = Vector2(65, 70)
+
+[node name="EnemySpawnPoint11" type="Node2D" parent="SpawnPoints" unique_id=1817383128]
+position = Vector2(90, 70)
+
+[node name="EnemySpawnPoint12" type="Node2D" parent="SpawnPoints" unique_id=1513322459]
+position = Vector2(115, 70)
+
+[node name="EnemySpawnPoint13" type="Node2D" parent="SpawnPoints" unique_id=4208913]
+position = Vector2(140, 70)
+
+[node name="EnemySpawnPoint14" type="Node2D" parent="SpawnPoints" unique_id=1276201875]
+position = Vector2(165, 70)
+
+[node name="EnemySpawnPoint15" type="Node2D" parent="SpawnPoints" unique_id=1676867672]
+position = Vector2(190, 70)
+
+[node name="EnemySpawnPoint16" type="Node2D" parent="SpawnPoints" unique_id=781258792]
+position = Vector2(215, 70)
+
+[connection signal="timeout" from="ShotTimer" to="." method="_on_shot_timer_timeout"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

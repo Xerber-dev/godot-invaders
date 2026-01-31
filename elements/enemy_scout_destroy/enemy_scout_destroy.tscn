@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b8xr1sxj50bho"]
+[gd_scene format=3 uid="uid://b8xr1sxj50bho"]
 
 [ext_resource type="Texture2D" uid="uid://cqgwcbuv1ol0g" path="res://assets/enemy_scout/Kla'ed - Scout - Destruction.png" id="1_jc6yc"]
 
@@ -80,11 +80,11 @@ animations = [{
 "speed": 15.0
 }]
 
-[node name="EnemyScoutDestroy" type="CharacterBody2D"]
+[node name="EnemyScoutDestroy" type="CharacterBody2D" unique_id=1299190153]
 collision_layer = 4
 collision_mask = 0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=291736933]
 scale = Vector2(0.734, 0.734)
 sprite_frames = SubResource("SpriteFrames_s3x17")
 autoplay = "default"
