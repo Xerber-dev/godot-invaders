@@ -18,7 +18,6 @@ func _physics_process(delta: float) -> void:
 
 func shot():
 	if reload_timer.time_left > 0:
-		print(reload_timer.time_left)
 		return
 	var bullet = BULLET_SCENE.instantiate()
 	bullet.global_position = global_position + Vector2(0, -15)

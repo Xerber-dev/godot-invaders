@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d0yn1aeaah7w8"]
+[gd_scene format=3 uid="uid://d0yn1aeaah7w8"]
 
 [ext_resource type="Texture2D" uid="uid://cpap8wjpftq2w" path="res://assets/main_ship/Bullet.png" id="1_6321c"]
 [ext_resource type="Script" uid="uid://d2c2ohowfkm11" path="res://elements/bullet/bullet.gd" id="1_rbwxg"]
@@ -43,23 +43,23 @@ animations = [{
 radius = 1.0
 height = 8.0
 
-[node name="Bullet" type="CharacterBody2D"]
+[node name="Bullet" type="CharacterBody2D" unique_id=1328760834]
 top_level = true
 collision_layer = 0
 collision_mask = 4
 script = ExtResource("1_rbwxg")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1158621838]
 scale = Vector2(0.734, 0.734)
 sprite_frames = SubResource("SpriteFrames_gsby4")
 autoplay = "default"
 frame_progress = 0.3510832
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1281176987]
 scale = Vector2(0.734, 0.734)
 shape = SubResource("CapsuleShape2D_2qajq")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=906658630]
 scale = Vector2(0.734, 0.734)
 rect = Rect2(-1, -4, 2, 12)
 
