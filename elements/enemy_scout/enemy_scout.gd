@@ -6,6 +6,7 @@ const SPEED_BOOST := 1.5
 
 @onready var raycast_left := $RayCastLeft
 @onready var raycast_right := $RayCastRight
+@onready var raycast_down := $RayCastDown
 @onready var block_timer := $BlockTimer
 
 
@@ -13,6 +14,10 @@ var direction := Vector2.RIGHT
 var speed := 5.0
 
 func _physics_process(delta: float) -> void:
+	if global_position.y == 230:
+		Events.enemy_reached_bottom.emit()
+	if raycast_down.is_colliding():
+		Events.enemy_hit_player.emit()
 	if raycast_left.is_colliding() or raycast_right.is_colliding():
 		get_tree().call_group("enemy_scout", "change_direction")
 		
@@ -39,4 +44,4 @@ func destroy():
 func shot():
 	var bullet = ENEMY_BULLET_SCENE.instantiate()
 	bullet.global_position += global_position + Vector2(0, 10.0)
-	add_child(bullet)
+	get_tree().current_scene.add_child(bullet)

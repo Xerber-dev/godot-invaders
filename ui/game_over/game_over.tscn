@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dd0sa7j2u1kvi"]
+[gd_scene format=3 uid="uid://dd0sa7j2u1kvi"]
 
 [ext_resource type="Script" uid="uid://b7hu2u2stlypo" path="res://ui/game_over/game_over.gd" id="1_ns3eh"]
 
@@ -12,10 +12,11 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.6255971, 0.6255972, 0.6255969, 1)
 
-[node name="GameOver" type="CanvasLayer"]
+[node name="GameOver" type="CanvasLayer" unique_id=1908576301]
+process_mode = 2
 script = ExtResource("1_ns3eh")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=935825067]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -23,7 +24,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.019607844, 0.019607844, 0.019607844, 0.8627451)
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1359860030]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -32,11 +33,11 @@ grow_vertical = 2
 theme_override_constants/margin_left = 30
 theme_override_constants/margin_right = 30
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1412328768]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=135981130]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -44,7 +45,7 @@ theme_override_font_sizes/font_size = 16
 text = "Game Over"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=847524375]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_dakft")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dxrkv")

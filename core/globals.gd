@@ -10,3 +10,8 @@ func change_points(diff: int):
 func change_lives(diff: int):
 	lives += diff
 	Events.lives_changed.emit(lives)
+
+func reset():
+	points = 0
+	lives = 3
+	

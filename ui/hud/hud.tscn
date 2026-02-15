@@ -1,12 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://dbp2cptje1bcv"]
+[gd_scene format=3 uid="uid://dbp2cptje1bcv"]
 
 [ext_resource type="Script" uid="uid://ddh80f5x16oqp" path="res://ui/hud/hud.gd" id="1_4d6w6"]
 [ext_resource type="PackedScene" uid="uid://behxvwlkt6euc" path="res://ui/lives_bar/lives_bar.tscn" id="2_4d6w6"]
 
-[node name="HUD" type="CanvasLayer"]
+[node name="HUD" type="CanvasLayer" unique_id=2112660930]
 script = ExtResource("1_4d6w6")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1337709607]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -17,19 +17,19 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1637736010]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=536581318]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=251957928]
 layout_mode = 2
 text = "0"
 
-[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=2090334622]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="LivesBar" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_4d6w6")]
+[node name="LivesBar" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=783834578 instance=ExtResource("2_4d6w6")]
 layout_mode = 2

@@ -7,16 +7,15 @@ var current_wave := 1
 var enemies_alive := 0
 var remaining_enemies := 0
 var boss_alive := false
-var spawn_points := []
 var available_points := []
 var available_enemies := []
 
 var waves = {
-  1: {"enemy_count": 17, "available_enemies": ["Scout"], "hp_multiplier": 1.05, "boss": false},
-  2: {"enemy_count": 17, "available_enemies": ["Scout"], "hp_multiplier": 1.10, "boss": false},
-  3: {"enemy_count": 17, "available_enemies": ["Scout"], "hp_multiplier": 1.15, "boss": false},
-  4: {"enemy_count": 17, "available_enemies": ["Scout"], "hp_multiplier": 1.05, "boss": false},
-  5: {"enemy_count": 17, "available_enemies": ["Scout"], "hp_multiplier": 1.10, "boss": false},
+  1: {"available_enemies": ["Scout"], "hp_multiplier": 1.5, "boss": false},
+  2: {"available_enemies": ["Scout"], "hp_multiplier": 2, "boss": false},
+  3: {"available_enemies": ["Scout"], "hp_multiplier": 2.5, "boss": false},
+  4: {"available_enemies": ["Scout"], "hp_multiplier": 3, "boss": false},
+  5: {"available_enemies": ["Scout"], "hp_multiplier": 3.5, "boss": false},
   6: {"available_enemies": ["BossScout"], "hp_multiplier": 1.0, "boss": true}
 }
 
@@ -29,17 +28,18 @@ func _ready() -> void:
 	Events.enemy_died.connect(func(): check_end_wave())
 	
 	var spawnpoints = get_node("SpawnPoints").get_child_count()
+	var spawn_points := []
 	for spawnpoint in range(spawnpoints):
 		var spawn_point: Node2D = get_node("SpawnPoints").get_child(spawnpoint)
 		spawn_points.append(spawn_point.global_position)
 	
-	start_wave()
+	start_wave(spawnpoints,spawn_points)
 
-func start_wave():
+func start_wave(spawnpoints,spawn_points):
 	var wave_info = get_current_wave_data()
 	if wave_info["boss"] == false:
-		enemies_alive = wave_info["enemy_count"]
-		remaining_enemies = wave_info["enemy_count"]
+		enemies_alive = spawnpoints
+		remaining_enemies = spawnpoints
 	else:
 		boss_alive = true
 	
@@ -74,7 +74,6 @@ func _on_spawn_timer_timeout() -> void:
 		remaining_enemies -= 1
 	else:
 		spawn_timer.stop()
-
 
 func _on_shot_timer_timeout() -> void:
 	var enemies = get_tree().get_nodes_in_group("enemy_scout")

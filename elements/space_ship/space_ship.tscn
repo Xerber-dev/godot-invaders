@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bdxgpim1ky7ul"]
+[gd_scene format=3 uid="uid://bdxgpim1ky7ul"]
 
 [ext_resource type="Script" uid="uid://dafbkoc2n02mc" path="res://elements/space_ship/space_ship.gd" id="1_klmva"]
 [ext_resource type="Texture2D" uid="uid://dpcymrq7i6jye" path="res://assets/main_ship/Main Ship - Base - Full health.png" id="1_q8tqi"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://q8yfdw1cm6m8" path="res://assets/main_ship/Main Ship - Engines - Base Engine.png" id="3_klmva"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yhe4x"]
-radius = 16.03122
+radius = 10.899182
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yp4ui"]
 atlas = ExtResource("2_rnxcu")
@@ -37,31 +37,31 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="SpaceShip" type="CharacterBody2D"]
+[node name="SpaceShip" type="CharacterBody2D" unique_id=671605771]
 collision_layer = 2
 script = ExtResource("1_klmva")
 
-[node name="MainShip" type="Sprite2D" parent="."]
-scale = Vector2(0.734, 0.734)
+[node name="MainShip" type="Sprite2D" parent="." unique_id=2102791428]
+scale = Vector2(0.488, 0.488)
 texture = ExtResource("1_q8tqi")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1457844591]
+position = Vector2(0, 2)
 scale = Vector2(0.734, 0.734)
 shape = SubResource("CircleShape2D_yhe4x")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=861351034]
 position = Vector2(0, 3)
-scale = Vector2(0.734, 0.734)
+scale = Vector2(0.488, 0.488)
 sprite_frames = SubResource("SpriteFrames_q8tqi")
 autoplay = "default"
 frame_progress = 0.26815823
 
-[node name="BaseEngine" type="Sprite2D" parent="."]
+[node name="BaseEngine" type="Sprite2D" parent="." unique_id=1336673724]
 show_behind_parent = true
 position = Vector2(0, 2)
-scale = Vector2(0.734, 0.734)
+scale = Vector2(0.488, 0.488)
 texture = ExtResource("3_klmva")
 
-[node name="ReloadTimer" type="Timer" parent="."]
+[node name="ReloadTimer" type="Timer" parent="." unique_id=856662868]
 one_shot = true
